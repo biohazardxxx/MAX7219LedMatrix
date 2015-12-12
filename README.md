@@ -1,4 +1,9 @@
 # MAX7219LedMatrix
+# This library was developed by Squix, http://blog.squix.ch/2015/04/esp8266arduino-max7219-8x8-led-matrix.html
+# adapted from  https://github.com/squix78/MAX7219LedMatrix
+# Added changes suggested in comments on squix' blog for ESP8266 WiFi Matrix
+#  
+# original README follows
 Library for the ESP8266 on Arduino IDE displaying text on multiple 8x8 led matrices
 
 This library leds you display text and set specific pixels on multiple 8x8 led matrices with a MAX7219 driver chip controlled through the SPI interface.
