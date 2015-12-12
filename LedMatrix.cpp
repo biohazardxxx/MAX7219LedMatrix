@@ -1,4 +1,3 @@
-
 #include <SPI.h>
 #include "LedMatrix.h"
 #include "cp437font.h"
@@ -17,7 +16,7 @@ void LedMatrix::init() {
   pinMode(mySlaveSelectPin, OUTPUT);
   
   SPI.begin ();
-  SPI.setDataMode(SPI_MODE3);
+  SPI.setDataMode(SPI_MODE0);
   SPI.setClockDivider(SPI_CLOCK_DIV128);
   for(byte device = 0; device < myNumberOfDevices; device++) {
     sendByte (device, MAX7219_REG_SCANLIMIT, 7);   // show all 8 digits
@@ -117,9 +116,9 @@ void LedMatrix::scrollTextRight() {
 }
 void LedMatrix::scrollTextLeft() {
    myTextOffset = (myTextOffset - 1) % ((int)myText.length() * myCharWidth + myNumberOfDevices * 8);
-   if (myTextOffset == 0 && myNextText != NULL) {
+   if (myTextOffset == 0 && myNextText.length() > 0) {
       myText = myNextText;
-      myNextText = NULL;
+      myNextText = "";
       calculateTextAlignmentOffset();
    }
 }
