@@ -70,6 +70,11 @@ public:
      * Turn on pixel at position (x,y).
      */
     void setPixel(byte x, byte y);
+
+    /**
+     * Turn off pixel at position (x,y).
+     */
+    void unsetPixel(byte x, byte y);
     
     /**
      * Clear the frame buffer.
